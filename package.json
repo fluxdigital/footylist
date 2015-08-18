@@ -1,0 +1,10 @@
+{
+  "name": "Footylist",
+  "version": "3.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-sass": "^1.0.0",
+    "grunt-sass-compile-imports": "^0.2.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }	
+}

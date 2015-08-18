@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@1.4.3" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="script/script.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-switch-master/bootstrap-switch.min.js"></script>
+  </head>
+
+  <body>
+    
+    <div ng-app="app" ng-controller="UserController">
+     <div id="container">
+        <form name="form">
+        <div id="heading"><h2>Footylist</h2></div>
+        <table class="table">
+            <tr>
+                <td><label>Name:</label></td>
+                <td><input type="text" name="name" ng-model="newuser.name" required autofocus/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input type="email" name="email" ng-model="newuser.email" required/>
+                    <span ng-show="form.email.$dirty && form.email.$error.email">Not an email id!</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Phone:</label></td>
+                <td><input type="text" name="phone" ng-model="newuser.phone" maxlength="11" required /><td>
+            </tr>    
+            <tr>
+                <td></td>
+                <td><input ng-disabled="form.$invalid" id="save-btn" type="button" value="Save" ng-click="saveUser()" /></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+        <table id="user-details-in-table" class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td> <a href="javascript:void(0)" ng-click="edit(user.id)">Edit</a> | <a href="javascript:void(0)" ng-click="delete(user.id)">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br/><br/>
+        <div id="user-list">
+            <ul class="list-group">
+                <li ng-repeat="user in users" class="list-group-item">
+                   <div class="player-name"> {{ user.name }}</div> <input type="checkbox" class="switchbtn" name="user-{{user.id}}-checkbox" add-toggles>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    
+  </body>
+
+</html>

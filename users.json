@@ -1,0 +1,3 @@
+[{ "id": 1, "name":"Vincent van Gogh", "email":"vincent@example.com", "phone":"0161999999", "playing":"0"},
+{ "id": 2, "name":"Leonardo da Vinci", "email":"leonardo@example.com", "phone":"0161999999", "playing":"1"},
+{ "id": 3, "name":"Pablo Picasso", "email":"pablo@example.com", "phone":"0161999999", "playing":"0"}]
